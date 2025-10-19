@@ -21,7 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Заполняем данными
         taskTitle.textContent = title;
-        taskDescription.textContent = description || 'Описание отсутствует.';
+        if (description && description.trim() !== '') {
+            taskDescription.textContent = '✧ ' + description;
+        } else {
+            taskDescription.textContent = 'Описание отсутствует.';
+        }
         
         // Добавляем обработчик удаления
         deleteBtn.addEventListener('click', function() {
@@ -55,9 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const titleInput = document.getElementById('taskTitle');
         const descriptionInput = document.getElementById('taskDescription');
-        
+
         const title = titleInput.value.trim();
-        const description = '✧ ' + descriptionInput.value.trim();
+        const description = descriptionInput.value.trim();
+
         
         if (title) {
             addTask(title, description);
