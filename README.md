@@ -8,4 +8,6 @@
 4. Форма;
 5. template-карточки;
 6. JavaScript.
+---
+Ссылка на Github Pages: https://gurisuma.github.io/planner-project/
 
